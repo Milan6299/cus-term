@@ -86,7 +86,6 @@ vim.keymap.set("n", "<leader>pr", function()
     return
   end
   custom_terminal({ height = 10 })
-  -- term_notify(file)
 
   vim.fn.chansend(job_id, "uv run " .. vim.fn.shellescape(file) .. "\n")
 end, { desc = "uv run file" })
@@ -99,7 +98,6 @@ vim.keymap.set("n", "<leader>rp", function()
     return
   end
   custom_terminal()
-  -- term_notify(file)
 
   vim.fn.chansend(job_id, "python " .. vim.fn.shellescape(file) .. "\n")
 end, { desc = "Run Python file" })
