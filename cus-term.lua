@@ -136,11 +136,11 @@ local function custom_terminal(opts)
 end
 
 vim.keymap.set("n", "<leader>tt", function()
-  custom_terminal()
+  custom_terminal({ float = true })
 end, { desc = "Open custom Terminal" })
 
-vim.keymap.set("n", "<leader>tf", function()
-  custom_terminal({ float = true })
+vim.keymap.set("n", "<leader>tv", function()
+  custom_terminal()
 end, { desc = "Open custom Terminal" })
 
 -- terminal mode to normal mode
@@ -154,7 +154,6 @@ vim.keymap.set("n", "<leader>pr", function()
     term_notify("No job id found!", "warn")
     return
   end
-
   vim.fn.chansend(job_id, "uv run " .. vim.fn.shellescape(file) .. "\n")
 end, { desc = "uv run file" })
 
